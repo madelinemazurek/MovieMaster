@@ -1,0 +1,62 @@
+<h1 style="font-size: xx-large;"> SIGN UP</h1>
+<mat-vertical-stepper>
+
+    <mat-step label = "Contact Information" completed = true>
+        <div class="First Name">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your first name</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+          </div>
+          <div class="Last Name">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your last name</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+          </div>
+          <div class="Email">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+          </div>
+          <div class="Password">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your password</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+          </div>
+          <div> 
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+
+    <mat-step label = "Payment Information" completed = true>
+        <div class="Card Number">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your card number</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+          </div>
+          <div class="CVV">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your card's CVV</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+          </div>
+          <div class="Expiration Date">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your card's expiration date</mat-label>
+              <input matInput placeholder="MM/YY" value="">
+            </mat-form-field>
+          </div>
+        <div> 
+            <button mat-button matStepperPrevious>Back</button>
+        </div>
+    </mat-step>
+
+</mat-vertical-stepper>
+
+<div> 
+  <button mat-button routerLink = "/login">Submit</button>
+</div>

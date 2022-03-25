@@ -1,0 +1,137 @@
+<h1 style="font-size: xx-large;"> ADMIN PAGE</h1>
+
+<p>This page will contain an interface that will allow admins to add or delete tuples in the database.</p>
+
+<!-- Make drop down menus for fk attributes when adding them  -->
+
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Add">
+        <div class="AddTheater">
+            <button mat-button routerLink="/addTheater">Add Theater</button>
+        </div>
+        <div class="AddShows">
+            <button mat-button routerLink="/addShow">Add Shows</button>
+        </div>
+        <div class="AddBranch">
+            <button mat-button routerLink="/addBranch">Add Branch</button>
+        </div>
+        <div class="AddShowroom">
+            <button mat-button routerLink="/addShowroom">Add Showroom</button>
+        </div>
+        <div class="AddShowing">
+            <button mat-button routerLink="/addShowing">Add Showing</button>
+        </div>
+        <div class="AddTickets">
+            <button mat-button routerLink="/addTicket">Add Ticket</button>
+        </div>
+        <!-- <div class="AddCustomer">
+            <button mat-button routerLink="/addCustomer">Add Customer</button> --------- done in signup page 
+        </div> -->
+        <div class="AddSystem_Admin">
+            <button mat-button routerLink="/addSystemAdmin">Add System Admin</button>
+        </div>
+        <div class="AddMovie">
+            <button mat-button routerLink="/addMovie">Add Movie</button>
+        </div>
+        <!-- <div class="AddMovieWriter">
+            <button mat-button routerLink="/">Add Movie Writer</button> --------- done in add movie
+        </div> -->
+    </mat-tab>
+
+    <mat-tab label="Delete">
+        <div class="DeleteTheater">
+            <button mat-button routerLink="/deleteTheater">Delete Theater</button>
+        </div>
+        <div class="DeleteShows">
+            <button mat-button routerLink="/deleteShow">Delete Shows</button>
+        </div>
+        <div class="DeleteBranch">
+            <button mat-button routerLink="/deleteBranch">Delete Branch</button>
+        </div>
+        <div class="DeleteShowroom">
+            <button mat-button routerLink="/deleteShowroom">Delete Showroom</button>
+        </div>
+        <div class="DeleteShowing">
+            <button mat-button routerLink="/deleteShowing">Delete Showing</button>
+        </div>
+        <div class="DeleteTickets">
+            <button mat-button routerLink="/deleteTicket">Delete Ticket</button>
+        </div>
+        <div class="DeleteCustomer">
+            <button mat-button routerLink="/deleteCustomer">Delete Customer</button>
+        </div>
+        <div class="DeleteSystem_Admin">
+            <button mat-button routerLink="/deleteSystemAdmin">Delete System Admin</button>
+        </div>
+        <div class="DeleteMovie">
+            <button mat-button routerLink="/deleteMovie">Delete Movie</button>
+        </div>
+        <div class="DeleteMovieWriter">
+            <button mat-button routerLink="/">Delete Movie Writer</button>
+        </div>
+        
+    </mat-tab>
+
+  </mat-tab-group>
+
+
+
+<!-- <mat-card>
+    <mat-vertical-stepper>
+
+        <mat-step label = "Showing Information" completed = true>
+            <div class="Branch ID">
+                <mat-form-field appearance="fill">
+                  <mat-label>Enter the theater name</mat-label>
+                  <input matInput placeholder="" value="">
+                </mat-form-field>
+            </div>
+            <div class="ShowRoomNo">
+                <mat-form-field appearance="fill">
+                  <mat-label>Enter the Showroom number</mat-label>
+                  <input matInput placeholder="" value="">
+                </mat-form-field>
+            </div>
+            <div class="Date">
+                <mat-form-field appearance="fill">
+                  <mat-label>Enter the date</mat-label>
+                  <input matInput placeholder="YYYY-MM-DD" value="">
+                </mat-form-field>
+            </div>
+            <div class="Time">
+                <mat-form-field appearance="fill">
+                  <mat-label>Enter the time</mat-label>
+                  <input matInput placeholder="hh:mm:ss" value="">
+                </mat-form-field>
+            </div>
+            <div> 
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+    
+        <mat-step label = "Movie Information" completed = true>
+            <div class="Movie Title">
+                <mat-form-field appearance="fill">
+                  <mat-label>Enter the movie title</mat-label>
+                  <input matInput placeholder="" value="">
+                </mat-form-field>
+              </div>
+              <div class="Runtime">
+                <mat-form-field appearance="fill">
+                  <mat-label>Enter the runtime</mat-label>
+                  <input matInput placeholder="hh:mm:ss" value="">
+                </mat-form-field>
+              </div>
+              <div class="Description">
+                <mat-form-field appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+              </div>
+            <div> 
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+    
+    </mat-vertical-stepper>
+</mat-card> -->

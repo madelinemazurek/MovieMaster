@@ -1,0 +1,58 @@
+<!-- 
+Include:
+    - Have search bar to search for movies by city
+    - Have display of new movies to check out
+    - 
+
+
+
+-->
+
+<!-- <mat-card class="home-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Movies</mat-card-title>
+      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        MOVIES
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>But</button>
+      <button mat-button>Poop</button>
+    </mat-card-actions>
+  </mat-card> -->
+  
+
+<h1 style="font-size: xx-large;"> Home</h1>
+<div class="SearchLocation">
+    <mat-form-field appearance="fill">
+      <mat-label>Search by location</mat-label>
+      <input matInput placeholder="Ex. Calgary" value="">
+    </mat-form-field>
+</div>
+
+<div class="SearchTheater">
+  <mat-form-field appearance="fill">
+    <mat-label>Search by theater name</mat-label>
+    <input matInput placeholder="Ex. Landmark" value="">
+  </mat-form-field>
+</div>
+
+<mat-card style="background-color: rgb(11, 146, 180);padding-bottom: 100%;">
+    <h1 style="font-size: xx-large;">Movies </h1>
+    <p> 
+      This page will contain the list of showings stored in the database. The list will be able to be filtered by location and theater name.
+    </p>
+    <p>
+      When a user clicks on a button beside the showing they wish to purchase tickets for it will take them to a ticket select page.
+    </p>
+    <!-- <img mat-card-image src="c:/users/jaras/source/repos/MovieMasterV5/images/test.jpg" > -->
+    <div class="ExampleMovieButton">
+      <button mat-button routerLink="/ticketselect">Example Movie Button</button>
+    </div>
+</mat-card>
+

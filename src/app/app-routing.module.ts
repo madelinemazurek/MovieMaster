@@ -16,6 +16,25 @@ import { AddShowingComponent } from './components/add-showing/add-showing.compon
 import { AddTicketsComponent } from './components/add-tickets/add-tickets.component';
 import { AddSystemAdminComponent } from './components/add-system-admin/add-system-admin.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import { AddMovieWriterComponent } from './components/add-movie-writer/add-movie-writer.component';
+import { AddMovieCastComponent } from './components/add-movie-cast/add-movie-cast.component';
+import { AddMovieDirectorComponent } from './components/add-movie-director/add-movie-director.component';
+import { AddMovieGenreComponent } from './components/add-movie-genre/add-movie-genre.component';
+import { AddMovieProducerComponent } from './components/add-movie-producer/add-movie-producer.component';
+import { DeleteCustomerComponent } from './components/delete-customer/delete-customer.component';
+import { DeleteBranchComponent } from './components/delete-branch/delete-branch.component';
+import { DeleteMovieComponent } from './components/delete-movie/delete-movie.component';
+import { DeleteMovieCastComponent } from './components/delete-movie-cast/delete-movie-cast.component';
+import { DeleteMovieDirectorComponent } from './components/delete-movie-director/delete-movie-director.component';
+import { DeleteMovieGenreComponent } from './components/delete-movie-genre/delete-movie-genre.component';
+import { DeleteMovieProducerComponent } from './components/delete-movie-producer/delete-movie-producer.component';
+import { DeleteMovieWriterComponent } from './components/delete-movie-writer/delete-movie-writer.component';
+import { DeleteShowingComponent } from './components/delete-showing/delete-showing.component';
+import { DeleteShowroomComponent } from './components/delete-showroom/delete-showroom.component';
+import { DeleteShowsComponent } from './components/delete-shows/delete-shows.component';
+import { DeleteSystemAdminComponent } from './components/delete-system-admin/delete-system-admin.component';
+import { DeleteTheaterComponent } from './components/delete-theater/delete-theater.component';
+import { DeleteTicketsComponent } from './components/delete-tickets/delete-tickets.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -34,6 +53,25 @@ const routes: Routes = [
   {path: 'addTicket', component:AddTicketsComponent},
   {path: 'addSystemAdmin', component:AddSystemAdminComponent},
   {path: 'addMovie', component:AddMovieComponent},
+  {path: 'addMovieWriter', component:AddMovieWriterComponent},
+  {path: 'addMovieCast', component:AddMovieCastComponent},
+  {path: 'addMovieDirector', component:AddMovieDirectorComponent},
+  {path: 'addMovieGenre', component:AddMovieGenreComponent},
+  {path: 'addMovieProducer', component:AddMovieProducerComponent},
+  {path: 'deleteBranch', component:DeleteBranchComponent},
+  {path: 'deleteCustomer', component:DeleteCustomerComponent},
+  {path: 'deleteMovie', component:DeleteMovieComponent},
+  {path: 'deleteMovieCast', component:DeleteMovieCastComponent},
+  {path: 'deleteMovieDirector', component:DeleteMovieDirectorComponent},
+  {path: 'deleteMovieGenre', component:DeleteMovieGenreComponent},
+  {path: 'deleteMovieProducer', component:DeleteMovieProducerComponent},
+  {path: 'deleteMovieWriter', component:DeleteMovieWriterComponent},
+  {path: 'deleteShowing', component:DeleteShowingComponent},
+  {path: 'deleteShowroom', component:DeleteShowroomComponent},
+  {path: 'deleteShows', component:DeleteShowsComponent},
+  {path: 'deleteSystemAdmin', component:DeleteSystemAdminComponent},
+  {path: 'deleteTheater', component:DeleteTheaterComponent},
+  {path: 'deleteTicket', component:DeleteTicketsComponent}
 ];
 
 @NgModule({

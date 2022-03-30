@@ -30,6 +30,25 @@ import { AddShowingComponent } from './components/add-showing/add-showing.compon
 import { AddTicketsComponent } from './components/add-tickets/add-tickets.component';
 import { AddSystemAdminComponent } from './components/add-system-admin/add-system-admin.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import { AddMovieProducerComponent } from './components/add-movie-producer/add-movie-producer.component';
+import { AddMovieWriterComponent } from './components/add-movie-writer/add-movie-writer.component';
+import { AddMovieCastComponent } from './components/add-movie-cast/add-movie-cast.component';
+import { AddMovieGenreComponent } from './components/add-movie-genre/add-movie-genre.component';
+import { AddMovieDirectorComponent } from './components/add-movie-director/add-movie-director.component';
+import { DeleteTheaterComponent } from './components/delete-theater/delete-theater.component';
+import { DeleteShowsComponent } from './components/delete-shows/delete-shows.component';
+import { DeleteBranchComponent } from './components/delete-branch/delete-branch.component';
+import { DeleteShowroomComponent } from './components/delete-showroom/delete-showroom.component';
+import { DeleteShowingComponent } from './components/delete-showing/delete-showing.component';
+import { DeleteTicketsComponent } from './components/delete-tickets/delete-tickets.component';
+import { DeleteCustomerComponent } from './components/delete-customer/delete-customer.component';
+import { DeleteSystemAdminComponent } from './components/delete-system-admin/delete-system-admin.component';
+import { DeleteMovieComponent } from './components/delete-movie/delete-movie.component';
+import { DeleteMovieWriterComponent } from './components/delete-movie-writer/delete-movie-writer.component';
+import { DeleteMovieProducerComponent } from './components/delete-movie-producer/delete-movie-producer.component';
+import { DeleteMovieCastComponent } from './components/delete-movie-cast/delete-movie-cast.component';
+import { DeleteMovieGenreComponent } from './components/delete-movie-genre/delete-movie-genre.component';
+import { DeleteMovieDirectorComponent } from './components/delete-movie-director/delete-movie-director.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +69,25 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
     AddTicketsComponent,
     AddSystemAdminComponent,
     AddMovieComponent,
+    AddMovieProducerComponent,
+    AddMovieWriterComponent,
+    AddMovieCastComponent,
+    AddMovieGenreComponent,
+    AddMovieDirectorComponent,
+    DeleteTheaterComponent,
+    DeleteShowsComponent,
+    DeleteBranchComponent,
+    DeleteShowroomComponent,
+    DeleteShowingComponent,
+    DeleteTicketsComponent,
+    DeleteCustomerComponent,
+    DeleteSystemAdminComponent,
+    DeleteMovieComponent,
+    DeleteMovieWriterComponent,
+    DeleteMovieProducerComponent,
+    DeleteMovieCastComponent,
+    DeleteMovieGenreComponent,
+    DeleteMovieDirectorComponent,
   ],
   imports: [
     MatSelectModule,

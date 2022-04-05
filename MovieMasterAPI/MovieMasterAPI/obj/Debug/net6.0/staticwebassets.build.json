@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kqGpeHA6pL8YtNNIdSzhyccl5nx3qYLmZuuyQSMFLGQ=",
+  "Source": "MovieMasterAPI",
+  "BasePath": "_content/MovieMasterAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

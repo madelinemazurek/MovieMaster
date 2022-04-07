@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,53 +6,53 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MovieMasterAPI.Models;
+using MovieMasterAPI.FrontEndModels;
 
 namespace MovieMasterAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomersController : ControllerBase
+    public class TheatersController : ControllerBase
     {
-        private readonly MovieMasterDbContext _context;
+        private readonly TheaterContext _context;
 
-        public CustomersController(MovieMasterDbContext context)
+        public TheatersController(TheaterContext context)
         {
             _context = context;
         }
 
-        // GET: api/Customers
+        // GET: api/Theaters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        public async Task<ActionResult<IEnumerable<Theater>>> GetTheater()
         {
-            return await _context.Customers.ToListAsync();
+            return await _context.Theater.ToListAsync();
         }
 
-        // GET: api/Customers/5
+        // GET: api/Theaters/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomer(string id)
+        public async Task<ActionResult<Theater>> GetTheater(string id)
         {
-            var customer = await _context.Customers.FindAsync(id);
+            var theater = await _context.Theater.FindAsync(id);
 
-            if (customer == null)
+            if (theater == null)
             {
                 return NotFound();
             }
 
-            return customer;
+            return theater;
         }
 
-        // PUT: api/Customers/5
+        // PUT: api/Theaters/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomer(string id, Customer customer)
+        public async Task<IActionResult> PutTheater(string id, Theater theater)
         {
-            if (id != customer.Email)
+            if (id != theater.Name)
             {
                 return BadRequest();
             }
 
-            _context.Entry(customer).State = EntityState.Modified;
+            _context.Entry(theater).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CustomerExists(id))
+                if (!TheaterExists(id))
                 {
                     return NotFound();
                 }
@@ -73,19 +73,19 @@ namespace MovieMasterAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Customers
+        // POST: api/Theaters
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
+        public async Task<ActionResult<Theater>> PostTheater(Theater theater)
         {
-            _context.Customers.Add(customer);
+            _context.Theater.Add(theater);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (CustomerExists(customer.Email))
+                if (TheaterExists(theater.Name))
                 {
                     return Conflict();
                 }
@@ -95,28 +95,28 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCustomer", new { id = customer.Email }, customer);
+            return CreatedAtAction("GetTheater", new { id = theater.Name }, theater);
         }
 
-        // DELETE: api/Customers/5
+        // DELETE: api/Theaters/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCustomer(string id)
+        public async Task<IActionResult> DeleteTheater(string id)
         {
-            var customer = await _context.Customers.FindAsync(id);
-            if (customer == null)
+            var theater = await _context.Theater.FindAsync(id);
+            if (theater == null)
             {
                 return NotFound();
             }
 
-            _context.Customers.Remove(customer);
+            _context.Theater.Remove(theater);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CustomerExists(string id)
+        private bool TheaterExists(string id)
         {
-            return _context.Customers.Any(e => e.Email == id);
+            return _context.Theater.Any(e => e.Name == id);
         }
     }
 }

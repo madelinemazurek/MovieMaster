@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMasterAPI", "MovieMasterAPI\MovieMasterAPI.csproj", "{FB07D10F-0C01-4ED6-9B8A-C1B1F72643FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieMasterAPI", "MovieMasterAPI\MovieMasterAPI.csproj", "{CF67E7E9-F8E5-42D1-806B-0019B0F146AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB07D10F-0C01-4ED6-9B8A-C1B1F72643FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB07D10F-0C01-4ED6-9B8A-C1B1F72643FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB07D10F-0C01-4ED6-9B8A-C1B1F72643FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB07D10F-0C01-4ED6-9B8A-C1B1F72643FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF67E7E9-F8E5-42D1-806B-0019B0F146AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF67E7E9-F8E5-42D1-806B-0019B0F146AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF67E7E9-F8E5-42D1-806B-0019B0F146AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF67E7E9-F8E5-42D1-806B-0019B0F146AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0B10FA09-0C72-4D65-BEAB-3409D39C262F}
+		SolutionGuid = {D20AFDBB-4BF0-4505-8E15-4D25D53E1A7B}
 	EndGlobalSection
 EndGlobal

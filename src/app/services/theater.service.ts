@@ -13,4 +13,14 @@ export class TheaterService {
     // Theater is the object payload that will be added to the database
     return this.webReqService.post('Theaters', theater )
   }
+
+  getAllTheaters() {
+    return this.webReqService.get('Theaters')
+    //   .map((response: Response) => <Theater[]>response.json())
+
+    // return this.webReqService.get('Theaters')
+    //   .then(response => <Theater[]>response.json())
+
+    //return this.webReqService.get<Theater[]>('Theaters');
+  }
 }

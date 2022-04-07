@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BranchService } from 'src/app/services/branch.service';
+import { TheaterService } from 'src/app/services/theater.service';
 import { Branch } from 'src/app/models/branch-model';
+import { Theater } from 'src/app/models/theater-model';
 
 @Component({
   selector: 'app-add-branch',
@@ -20,11 +22,15 @@ import { Branch } from 'src/app/models/branch-model';
         <input matInput type="branch.Address" required Address="Address" #Address="ngModel" [(ngModel)]="Branch.Address">
       </mat-form-field>
   </div>
-  
+  <!-- type="branch.TheaterName" -->
   <div>
       <mat-form-field appearance="fill">
         <mat-label>Select TheaterName</mat-label>
-        <input matInput type="branch.Address" required Address="Address" #Address="ngModel" [(ngModel)]="Branch.Address">
+        <mat-select required name="TheaterName" #TheaterName="ngModel" [(ngModel)]="Branch.TheaterName">
+          <mat-option *ngFor="let currTheater of currentTheaters" [value]="currTheater.name"> 
+            {{currTheater.name}} 
+          </mat-option>
+        </mat-select>
       </mat-form-field>
   </div>
     
@@ -35,15 +41,27 @@ import { Branch } from 'src/app/models/branch-model';
 })
 export class AddBranchComponent implements OnInit {
 
-  constructor(private branchService : BranchService) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private branchService : BranchService, private theaterService : TheaterService) { }
 
   Branch = new Branch();
-  createNewBranch(){
+  selectedValue: string = "";
+  currentTheaters: Theater[] = [];
 
+  ngOnInit(): void {
+    this.getTheaters()
+      .subscribe((data: any) => {
+        this.currentTheaters = data as Theater[];
+        console.log(this.currentTheaters[0].name);
+        console.log(this.currentTheaters);
+      });
+  }
+
+  createNewBranch(){
     this.branchService.createBranch(this.Branch).subscribe((response : any) => {console.log(response)} );
+  }
+
+  getTheaters() {
+    return this.theaterService.getAllTheaters();
   }
 
 }

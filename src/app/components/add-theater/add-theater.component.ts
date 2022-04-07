@@ -10,7 +10,7 @@ import { Theater } from 'src/app/models/theater-model';
   <div>
       <mat-form-field appearance="fill" hideRequiredMarker>
         <mat-label>Input Theater Name</mat-label>
-          <input matInput type="theater.Name" required Name="name" #name="ngModel" [(ngModel)]="theater.Name">
+          <input matInput type="theater.Name" required Name="name" #name="ngModel" [(ngModel)]="theater.name">
       </mat-form-field>
   </div>
     
@@ -31,7 +31,7 @@ export class AddTheaterComponent implements OnInit {
     // Get Input
     //get rid off below
     //var theater = new Theater("test");
-
+    console.log("heyhey")
     // Create new theater
     // this.theater goes into createTheater
     this.theaterService.createTheater(this.theater).subscribe((response : any) => {console.log(response)} );

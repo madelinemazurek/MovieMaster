@@ -1,5 +1,5 @@
 export class Branch{
-    BranchID : Number = 0;
+    //BranchID : Number = 0;
     BranchName : string = "";
     Address : string = "";
     TheaterName : string = "";

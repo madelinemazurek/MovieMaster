@@ -12,6 +12,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 import { LoginComponent } from './components/login/login.component';
@@ -49,6 +51,11 @@ import { DeleteMovieProducerComponent } from './components/delete-movie-producer
 import { DeleteMovieCastComponent } from './components/delete-movie-cast/delete-movie-cast.component';
 import { DeleteMovieGenreComponent } from './components/delete-movie-genre/delete-movie-genre.component';
 import { DeleteMovieDirectorComponent } from './components/delete-movie-director/delete-movie-director.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { TheaterService } from 'src/app/services/theater.service';
+import { WebRequestService } from './services/web-request.service';
+import { BranchService } from './services/branch.service';
 
 @NgModule({
   declarations: [
@@ -99,9 +106,16 @@ import { DeleteMovieDirectorComponent } from './components/delete-movie-director
     MatToolbarModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    TheaterService,
+    WebRequestService,
+    BranchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCustomer(string id, Customer customer)
         {
-            if (id != customer.BuyerEmail)
+            if (id != customer.email)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (CustomerExists(customer.BuyerEmail))
+                if (CustomerExists(customer.email))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCustomer", new { id = customer.BuyerEmail }, customer);
+            return CreatedAtAction("GetCustomer", new { id = customer.email }, customer);
         }
 
         // DELETE: api/Customers/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool CustomerExists(string id)
         {
-            return _context.Customer.Any(e => e.BuyerEmail == id);
+            return _context.Customer.Any(e => e.email == id);
         }
     }
 }

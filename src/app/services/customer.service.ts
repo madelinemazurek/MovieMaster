@@ -10,5 +10,9 @@ export class CustomerService {
 
   //add methods here
 
-  
+  createCustomer(customer : Customer){
+    // Theater is the object payload that will be added to the database
+    return this.webReqService.post('Customers', customer)
+  }
+
 }

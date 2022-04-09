@@ -28,12 +28,6 @@ export class AddTheaterComponent implements OnInit {
 
   theater = new Theater();
   createNewTheater(){
-    // Get Input
-    //get rid off below
-    //var theater = new Theater("test");
-    console.log("heyhey")
-    // Create new theater
-    // this.theater goes into createTheater
     this.theaterService.createTheater(this.theater).subscribe((response : any) => {console.log(response)} );
   }
 

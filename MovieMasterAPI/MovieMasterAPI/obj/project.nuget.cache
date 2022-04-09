@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v/fYbFhtROdzFa39EHxFOXW4I5nmIOy9C/5vkNtDRCmSiOJj6sOyjHAz/2RLU0JtmosyH2DloyZc/XnOkLaUfA==",
+  "dgSpecHash": "nouH8HlDjc7sMG11t+b6YAnF6QJsT2Rtk9+RsJimYElaetG/Pb9wQcxM1lus7NyIDI8FhZHMzHf3EJqmeJJCXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jaras\\Desktop\\CPSC471\\Project\\MovieMasterAPI\\MovieMasterAPI\\MovieMasterAPI.csproj",
+  "projectFilePath": "C:\\Users\\jaras\\Desktop\\CPSC471\\Project\\MovieMaster\\MovieMasterAPI\\MovieMasterAPI\\MovieMasterAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jaras\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jaras\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

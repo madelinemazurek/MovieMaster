@@ -11,7 +11,7 @@ namespace MovieMasterAPI.FrontEndModels
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Shows>()
-                .HasKey(m => new { m.TheaterName, m.MovieTitle });
+                .HasKey(m => new { m.theaterName, m.movieTitle });
         }
     }
 }

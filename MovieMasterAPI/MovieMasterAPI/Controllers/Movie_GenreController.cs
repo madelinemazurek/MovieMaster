@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,11 +98,11 @@ namespace MovieMasterAPI.Controllers
             return CreatedAtAction("GetMovie_Genre", new { id = movie_Genre.MovieTitle }, movie_Genre);
         }
 
-        // DELETE: api/Movie_Genre/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMovie_Genre(string id)
+        // DELETE: api/Movie_Genre/5/5
+        [HttpDelete("{keyOne}/{keyTwo}")]
+        public async Task<IActionResult> DeleteMovie_Genre(string keyOne,string keyTwo)
         {
-            var movie_Genre = await _context.Movie_Genre.FindAsync(id);
+            var movie_Genre = await _context.Movie_Genre.FindAsync(keyOne,keyTwo);
             if (movie_Genre == null)
             {
                 return NotFound();

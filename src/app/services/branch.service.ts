@@ -14,4 +14,12 @@ export class BranchService {
     return this.webReqService.post('Branches', branch )
   }
 
+  getAllBranches() {
+    return this.webReqService.get('Branches')
+  }
+
+  deleteBranch(pk : string){
+    return this.webReqService.delete(pk)
+  }
+
 }

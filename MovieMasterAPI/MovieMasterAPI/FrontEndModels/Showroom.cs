@@ -6,8 +6,8 @@ namespace MovieMasterAPI.FrontEndModels
     public class Showroom
     {
 
-        [ForeignKey("BranchID")]
-        public Branch Branch { get; set; }
+        //[ForeignKey("BranchID")]
+        //public Branch Branch { get; set; }
 
         [Required]
         public int BranchID { get; set; }

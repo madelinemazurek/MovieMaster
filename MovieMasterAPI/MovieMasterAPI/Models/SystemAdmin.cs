@@ -8,7 +8,6 @@ namespace MovieMasterAPI.Models
         public SystemAdmin()
         {
             Movies = new HashSet<Movie>();
-            Showings = new HashSet<Showing>();
         }
 
         public string Email { get; set; } = null!;
@@ -19,6 +18,5 @@ namespace MovieMasterAPI.Models
 
         public virtual Branch Branch { get; set; } = null!;
         public virtual ICollection<Movie> Movies { get; set; }
-        public virtual ICollection<Showing> Showings { get; set; }
     }
 }

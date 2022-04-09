@@ -6,7 +6,7 @@ namespace MovieMasterAPI.FrontEndModels
     public class Movie
     {
         [Key]
-        public string MovieTitle { get; set; }
+        public string Title { get; set; }
 
         [Column(TypeName = "nvarchar(10)")]
         public string RunTime { get; set; }
@@ -15,7 +15,6 @@ namespace MovieMasterAPI.FrontEndModels
         public string Description { get; set; }
 
         [ForeignKey("AdminEmail")]
-        public System_Admin System_Admin { get; set; }
         public string AdminEmail { get; set; }
 
 

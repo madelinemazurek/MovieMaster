@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +30,7 @@ namespace MovieMasterAPI.Controllers
 
         // GET: api/Showings/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Showing>> GetShowing(DateTime id)
+        public async Task<ActionResult<Showing>> GetShowing(string id)
         {
             var showing = await _context.Showing.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace MovieMasterAPI.Controllers
         // PUT: api/Showings/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutShowing(DateTime id, Showing showing)
+        public async Task<IActionResult> PutShowing(string id, Showing showing)
         {
             if (id != showing.Date)
             {
@@ -99,10 +99,10 @@ namespace MovieMasterAPI.Controllers
         }
 
         // DELETE: api/Showings/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteShowing(DateTime id)
+        [HttpDelete("{keyOne}/{keyTwo}/{keyThree}/{keyFour}")]
+        public async Task<IActionResult> DeleteShowing(string keyOne, string keyTwo, int keyThree, int keyFour)
         {
-            var showing = await _context.Showing.FindAsync(id);
+            var showing = await _context.Showing.FindAsync(keyOne,keyTwo,keyThree,keyFour);
             if (showing == null)
             {
                 return NotFound();
@@ -114,7 +114,7 @@ namespace MovieMasterAPI.Controllers
             return NoContent();
         }
 
-        private bool ShowingExists(DateTime id)
+        private bool ShowingExists(string id)
         {
             return _context.Showing.Any(e => e.Date == id);
         }

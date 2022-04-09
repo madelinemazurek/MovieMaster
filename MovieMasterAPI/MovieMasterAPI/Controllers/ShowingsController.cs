@@ -98,7 +98,7 @@ namespace MovieMasterAPI.Controllers
             return CreatedAtAction("GetShowing", new { id = showing.Date }, showing);
         }
 
-        // DELETE: api/Showings/5
+        // DELETE: api/Showings/5/5/5/5
         [HttpDelete("{keyOne}/{keyTwo}/{keyThree}/{keyFour}")]
         public async Task<IActionResult> DeleteShowing(string keyOne, string keyTwo, int keyThree, int keyFour)
         {

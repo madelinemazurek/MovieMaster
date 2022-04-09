@@ -98,11 +98,11 @@ namespace MovieMasterAPI.Controllers
             return CreatedAtAction("GetShowroom", new { id = showroom.ShowRoomNo }, showroom);
         }
 
-        // DELETE: api/Showrooms/5
-        [HttpDelete("{keyOne}")]
-        public async Task<IActionResult> DeleteShowroom(int keyOne)
+        // DELETE: api/Showrooms/5/5
+        [HttpDelete("{keyOne}/{keyTwo}")]
+        public async Task<IActionResult> DeleteShowroom(int keyOne, int keyTwo)
         {
-            var showroom = await _context.Showroom.FindAsync(keyOne);
+            var showroom = await _context.Showroom.FindAsync(keyOne,keyTwo);
             if (showroom == null)
             {
                 return NotFound();

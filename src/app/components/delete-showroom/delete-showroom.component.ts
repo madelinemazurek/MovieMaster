@@ -11,9 +11,9 @@ import { Showroom } from 'src/app/models/showroom-model';
   <div>
       <mat-form-field appearance="fill">
         <mat-label>Select Showroom Nummber</mat-label>
-        <mat-select required name="showroomNo" #showroomNo="ngModel" [(ngModel)]="Showroom.showroomNo">
-          <mat-option *ngFor="let currShowroom of currentShowroom" [value]="currShowroom.showroomNo"> 
-            {{currShowroom.showroomNo}} 
+        <mat-select required name="showroomNo" #showroomNo="ngModel" [(ngModel)]="Showroom.showRoomNo">
+          <mat-option *ngFor="let currShowroom of currentShowrooms" [value]="currShowroom.showRoomNo"> 
+            {{currShowroom.showRoomNo}} 
           </mat-option>
         </mat-select>
       </mat-form-field>

@@ -6,17 +6,11 @@ namespace MovieMasterAPI.FrontEndModels
     public class Shows
     {
 
-        [ForeignKey("TheaterName")]
-        public Theater Theater { get; set; }
-
         [Required]
         [MaxLength(100)]
-        public string TheaterName { get; set; }
-
-        [ForeignKey("MovieTitle")]
-        public Movie Movie { get; set; }   
+        public string theaterName { get; set; }
         
         [Required]
-        public string MovieTitle { get; set; }
+        public string movieTitle { get; set; }
     }
 }

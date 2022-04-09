@@ -6,19 +6,19 @@ namespace MovieMasterAPI.FrontEndModels
     public class Branch
     {
         [Key]
-        public int BranchID { get; set; }
+        public int branchID { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string BranchName { get; set; }
+        public string branchName { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string Address { get; set; }
+        public string address { get; set; }
 
         //[ForeignKey("TheaterName")]
         
         //public Theater Theater { get; set; }
         [MaxLength(100)]
-        public string TheaterName { get; set; }
+        public string theaterName { get; set; }
 
     }
 }

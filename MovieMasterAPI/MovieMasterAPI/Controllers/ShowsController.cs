@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutShows(string id, Shows shows)
         {
-            if (id != shows.TheaterName)
+            if (id != shows.theaterName)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ShowsExists(shows.TheaterName))
+                if (ShowsExists(shows.theaterName))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetShows", new { id = shows.TheaterName }, shows);
+            return CreatedAtAction("GetShows", new { id = shows.theaterName }, shows);
         }
 
         // DELETE: api/Shows/5/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool ShowsExists(string id)
         {
-            return _context.Shows.Any(e => e.TheaterName == id);
+            return _context.Shows.Any(e => e.theaterName == id);
         }
     }
 }

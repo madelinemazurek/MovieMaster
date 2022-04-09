@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutShowing(string id, Showing showing)
         {
-            if (id != showing.Date)
+            if (id != showing.date)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ShowingExists(showing.Date))
+                if (ShowingExists(showing.date))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetShowing", new { id = showing.Date }, showing);
+            return CreatedAtAction("GetShowing", new { id = showing.date }, showing);
         }
 
         // DELETE: api/Showings/5/5/5/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool ShowingExists(string id)
         {
-            return _context.Showing.Any(e => e.Date == id);
+            return _context.Showing.Any(e => e.date == id);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTickets(int id, Tickets tickets)
         {
-            if (id != tickets.TicketID)
+            if (id != tickets.ticketID)
             {
                 return BadRequest();
             }
@@ -81,7 +81,7 @@ namespace MovieMasterAPI.Controllers
             _context.Tickets.Add(tickets);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTickets", new { id = tickets.TicketID }, tickets);
+            return CreatedAtAction("GetTickets", new { id = tickets.ticketID }, tickets);
         }
 
         // DELETE: api/Tickets/5
@@ -102,7 +102,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool TicketsExists(int id)
         {
-            return _context.Tickets.Any(e => e.TicketID == id);
+            return _context.Tickets.Any(e => e.ticketID == id);
         }
     }
 }

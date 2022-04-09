@@ -6,7 +6,7 @@ namespace MovieMasterAPI.FrontEndModels
     public class System_Admin
     {
         [Key]
-        public string AdminEmail { get; set; }
+        public string Email { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
         public string Password { get; set; }
@@ -17,7 +17,6 @@ namespace MovieMasterAPI.FrontEndModels
         public string LName { get; set; }
 
         [ForeignKey("BranchID")]
-        public Branch Branch { get; set; }
         public int BranchID { get; set; }
 
 

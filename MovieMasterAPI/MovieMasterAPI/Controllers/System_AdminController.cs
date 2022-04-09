@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSystem_Admin(string id, System_Admin system_Admin)
         {
-            if (id != system_Admin.AdminEmail)
+            if (id != system_Admin.Email)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (System_AdminExists(system_Admin.AdminEmail))
+                if (System_AdminExists(system_Admin.Email))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetSystem_Admin", new { id = system_Admin.AdminEmail }, system_Admin);
+            return CreatedAtAction("GetSystem_Admin", new { id = system_Admin.Email }, system_Admin);
         }
 
         // DELETE: api/System_Admin/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool System_AdminExists(string id)
         {
-            return _context.System_Admin.Any(e => e.AdminEmail == id);
+            return _context.System_Admin.Any(e => e.Email == id);
         }
     }
 }

@@ -17,9 +17,7 @@ namespace MovieMasterAPI.Models
         public string AdminEmail { get; set; } = null!;
         public string MovieTitle { get; set; } = null!;
 
-        public virtual SystemAdmin AdminEmailNavigation { get; set; } = null!;
         public virtual Movie MovieTitleNavigation { get; set; } = null!;
-        public virtual Showroom Showroom { get; set; } = null!;
         public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

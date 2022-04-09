@@ -20,12 +20,11 @@ namespace MovieMasterAPI.FrontEndModels
 
        // public List<Showroom> Showrooms { get; set; }
 
+        [Required]
+        public DateOnly Date { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
-
-        [Required]
-        public DateTime Time { get; set; }
+        public TimeOnly Time { get; set; }
 
 
      //   [ForeignKey("AdminEmail")]
@@ -34,7 +33,6 @@ namespace MovieMasterAPI.FrontEndModels
 
 
         [ForeignKey("MovieTitle")]
-        public Movie Movie { get; set; }
         public string MovieTitle { get; set; }
 
     }

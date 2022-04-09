@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,10 +99,10 @@ namespace MovieMasterAPI.Controllers
         }
 
         // DELETE: api/Showrooms/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteShowroom(int id)
+        [HttpDelete("{keyOne}")]
+        public async Task<IActionResult> DeleteShowroom(int keyOne)
         {
-            var showroom = await _context.Showroom.FindAsync(id);
+            var showroom = await _context.Showroom.FindAsync(keyOne);
             if (showroom == null)
             {
                 return NotFound();

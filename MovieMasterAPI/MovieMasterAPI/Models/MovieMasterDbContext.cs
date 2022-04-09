@@ -34,7 +34,7 @@ namespace MovieMasterAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=MovieMasterDb;Trusted_Connection=True;MultipleActiveResultSets=True;");
             }
         }
@@ -58,7 +58,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.TheaterNameNavigation)
                     .WithMany(p => p.Branches)
                     .HasForeignKey(d => d.TheaterName)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Branch_Theater");
             });
 
@@ -102,7 +101,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.AdminEmailNavigation)
                     .WithMany(p => p.Movies)
                     .HasForeignKey(d => d.AdminEmail)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Movie_System_Admin");
             });
 
@@ -119,7 +117,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.MovieTitleNavigation)
                     .WithMany(p => p.MovieCasts)
                     .HasForeignKey(d => d.MovieTitle)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Movie_Cast_Movie");
             });
 
@@ -136,7 +133,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.MovieTitleNavigation)
                     .WithMany(p => p.MovieDirectors)
                     .HasForeignKey(d => d.MovieTitle)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Movie_Director_Movie");
             });
 
@@ -153,7 +149,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.MovieTitleNavigation)
                     .WithMany(p => p.MovieGenres)
                     .HasForeignKey(d => d.MovieTitle)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Movie_Genre_Movie");
             });
 
@@ -170,7 +165,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.MovieTitleNavigation)
                     .WithMany(p => p.MovieProducers)
                     .HasForeignKey(d => d.MovieTitle)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Movie_Producer_Movie");
             });
 
@@ -187,7 +181,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.MovieTitleNavigation)
                     .WithMany(p => p.MovieWriters)
                     .HasForeignKey(d => d.MovieTitle)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Movie_Writer_Movie");
             });
 
@@ -205,23 +198,10 @@ namespace MovieMasterAPI.Models
 
                 entity.Property(e => e.MovieTitle).HasMaxLength(100);
 
-                entity.HasOne(d => d.AdminEmailNavigation)
-                    .WithMany(p => p.Showings)
-                    .HasForeignKey(d => d.AdminEmail)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Showing_System_Admin");
-
                 entity.HasOne(d => d.MovieTitleNavigation)
                     .WithMany(p => p.Showings)
                     .HasForeignKey(d => d.MovieTitle)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Showing_Movie");
-
-                entity.HasOne(d => d.Showroom)
-                    .WithMany(p => p.Showings)
-                    .HasForeignKey(d => new { d.BranchId, d.ShowRoomNo })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Showing_Showroom");
             });
 
             modelBuilder.Entity<Showroom>(entity =>
@@ -239,7 +219,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.Branch)
                     .WithMany(p => p.Showrooms)
                     .HasForeignKey(d => d.BranchId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Showroom_Branch");
             });
 
@@ -266,7 +245,6 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.Branch)
                     .WithMany(p => p.SystemAdmins)
                     .HasForeignKey(d => d.BranchId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_System_Admin_Branch");
             });
 
@@ -300,12 +278,12 @@ namespace MovieMasterAPI.Models
                 entity.HasOne(d => d.BuyerEmailNavigation)
                     .WithMany(p => p.Tickets)
                     .HasForeignKey(d => d.BuyerEmail)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_Tickets_Customer");
 
                 entity.HasOne(d => d.Showing)
                     .WithMany(p => p.Tickets)
                     .HasForeignKey(d => new { d.Date, d.Time, d.ShowRoomNo, d.BranchId })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Tickets_Showing");
             });
 

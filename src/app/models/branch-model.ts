@@ -1,8 +1,8 @@
 export class Branch{
     branchID : Number = 0;
-    BranchName : string = "";
-    Address : string = "";
-    TheaterName : string = "";
+    branchName : string = "";
+    address : string = "";
+    theaterName : string = "";
 
     // constructor(BranchID : BigInt, BranchName : string, Address : string, TheaterName : string){
     //     this.BranchID = BranchID;

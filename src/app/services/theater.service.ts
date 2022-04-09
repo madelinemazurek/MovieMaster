@@ -23,4 +23,8 @@ export class TheaterService {
 
     //return this.webReqService.get<Theater[]>('Theaters');
   }
+
+  deleteTheater(pk : string){
+    return this.webReqService.delete(pk)
+  }
 }

@@ -42,6 +42,6 @@ testem.log
 Thumbs.db
 
 # API stuff
-MovieMasterAPI/.vs/MovieMasterAPI/*
-MovieMasterAPI/MovieMasterAPI/bin/*
-MovieMasterAPI/MovieMasterAPI/obj/*
+/MovieMasterAPI/.vs/MovieMasterAPI/*
+/MovieMasterAPI/MovieMasterAPI/bin/*
+/MovieMasterAPI/MovieMasterAPI/obj/*

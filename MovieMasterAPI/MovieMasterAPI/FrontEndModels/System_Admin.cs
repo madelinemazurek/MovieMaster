@@ -6,21 +6,18 @@ namespace MovieMasterAPI.FrontEndModels
     public class System_Admin
     {
         [Key]
-        public string Email { get; set; }
+        public string email { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string Password { get; set; }
+        public string password { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string Fname { get; set; }
+        public string fName { get; set; }
 
-        public string LName { get; set; }
+        public string lName { get; set; }
 
         [ForeignKey("BranchID")]
-        public int BranchID { get; set; }
-
-
-
+        public int branchID { get; set; }
 
     }
 }

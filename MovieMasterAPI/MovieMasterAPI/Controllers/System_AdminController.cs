@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSystem_Admin(string id, System_Admin system_Admin)
         {
-            if (id != system_Admin.Email)
+            if (id != system_Admin.email)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (System_AdminExists(system_Admin.Email))
+                if (System_AdminExists(system_Admin.email))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetSystem_Admin", new { id = system_Admin.Email }, system_Admin);
+            return CreatedAtAction("GetSystem_Admin", new { id = system_Admin.email }, system_Admin);
         }
 
         // DELETE: api/System_Admin/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool System_AdminExists(string id)
         {
-            return _context.System_Admin.Any(e => e.Email == id);
+            return _context.System_Admin.Any(e => e.email == id);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutShowroom(int id, Showroom showroom)
         {
-            if (id != showroom.ShowRoomNo)
+            if (id != showroom.showRoomNo)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ShowroomExists(showroom.ShowRoomNo))
+                if (ShowroomExists(showroom.showRoomNo))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetShowroom", new { id = showroom.ShowRoomNo }, showroom);
+            return CreatedAtAction("GetShowroom", new { id = showroom.showRoomNo }, showroom);
         }
 
         // DELETE: api/Showrooms/5/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool ShowroomExists(int id)
         {
-            return _context.Showroom.Any(e => e.ShowRoomNo == id);
+            return _context.Showroom.Any(e => e.showRoomNo == id);
         }
     }
 }

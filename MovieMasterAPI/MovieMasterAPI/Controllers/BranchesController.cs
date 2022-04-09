@@ -1,4 +1,4 @@
-﻿#nullable disable
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBranch(int id, Branch branch)
         {
-            if (id != branch.BranchID)
+            if (id != branch.branchID)
             {
                 return BadRequest();
             }
@@ -81,7 +81,7 @@ namespace MovieMasterAPI.Controllers
             _context.Branch.Add(branch);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBranch", new { id = branch.BranchID }, branch);
+            return CreatedAtAction("GetBranch", new { id = branch.branchID }, branch);
         }
 
         // DELETE: api/Branches/5
@@ -102,7 +102,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool BranchExists(int id)
         {
-            return _context.Branch.Any(e => e.BranchID == id);
+            return _context.Branch.Any(e => e.branchID == id);
         }
     }
 }

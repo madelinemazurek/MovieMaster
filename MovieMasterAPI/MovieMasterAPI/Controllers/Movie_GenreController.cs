@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMovie_Genre(string id, Movie_Genre movie_Genre)
         {
-            if (id != movie_Genre.MovieTitle)
+            if (id != movie_Genre.movieTitle)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (Movie_GenreExists(movie_Genre.MovieTitle))
+                if (Movie_GenreExists(movie_Genre.movieTitle))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetMovie_Genre", new { id = movie_Genre.MovieTitle }, movie_Genre);
+            return CreatedAtAction("GetMovie_Genre", new { id = movie_Genre.movieTitle }, movie_Genre);
         }
 
         // DELETE: api/Movie_Genre/5/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool Movie_GenreExists(string id)
         {
-            return _context.Movie_Genre.Any(e => e.MovieTitle == id);
+            return _context.Movie_Genre.Any(e => e.movieTitle == id);
         }
     }
 }

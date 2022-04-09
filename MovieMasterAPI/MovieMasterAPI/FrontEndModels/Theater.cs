@@ -6,7 +6,7 @@ namespace MovieMasterAPI.FrontEndModels
     {
         [Key]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public string name { get; set; }
 
        //public List<Branch> Branches { get; set; }  
 

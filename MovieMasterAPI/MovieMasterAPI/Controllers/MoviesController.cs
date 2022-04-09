@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMovie(string id, Movie movie)
         {
-            if (id != movie.Title)
+            if (id != movie.title)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (MovieExists(movie.Title))
+                if (MovieExists(movie.title))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetMovie", new { id = movie.Title }, movie);
+            return CreatedAtAction("GetMovie", new { id = movie.title }, movie);
         }
 
         // DELETE: api/Movies/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool MovieExists(string id)
         {
-            return _context.Movie.Any(e => e.Title == id);
+            return _context.Movie.Any(e => e.title == id);
         }
     }
 }

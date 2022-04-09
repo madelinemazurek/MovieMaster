@@ -47,7 +47,7 @@ namespace MovieMasterAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMovie_Director(string id, Movie_Director movie_Director)
         {
-            if (id != movie_Director.MovieTitle)
+            if (id != movie_Director.movieTitle)
             {
                 return BadRequest();
             }
@@ -85,7 +85,7 @@ namespace MovieMasterAPI.Controllers
             }
             catch (DbUpdateException)
             {
-                if (Movie_DirectorExists(movie_Director.MovieTitle))
+                if (Movie_DirectorExists(movie_Director.movieTitle))
                 {
                     return Conflict();
                 }
@@ -95,7 +95,7 @@ namespace MovieMasterAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetMovie_Director", new { id = movie_Director.MovieTitle }, movie_Director);
+            return CreatedAtAction("GetMovie_Director", new { id = movie_Director.movieTitle }, movie_Director);
         }
 
         // DELETE: api/Movie_Director/5
@@ -116,7 +116,7 @@ namespace MovieMasterAPI.Controllers
 
         private bool Movie_DirectorExists(string id)
         {
-            return _context.Movie_Director.Any(e => e.MovieTitle == id);
+            return _context.Movie_Director.Any(e => e.movieTitle == id);
         }
     }
 }

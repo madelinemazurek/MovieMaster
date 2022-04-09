@@ -22,7 +22,7 @@ import { Branch } from 'src/app/models/branch-model';
   <div>
       <mat-form-field appearance="fill">
         <mat-label>Select BranchID</mat-label>
-        <mat-select required name="branchID" #BranchID="ngModel" [(ngModel)]="Branch.branchID">
+        <mat-select required name="branchID" #BranchID="ngModel" [(ngModel)]="Showroom.branchID">
           <mat-option *ngFor="let currBranch of currentBranches" [value]="currBranch.branchID"> 
             {{currBranch.branchID}} 
           </mat-option>
@@ -42,7 +42,6 @@ export class DeleteShowroomComponent implements OnInit {
   currentBranches: Branch[] = [];
   Branch = new Branch();
   Showroom = new Showroom();
-  pk: string = "";
 
   ngOnInit(): void {
     this.getShowrooms()
@@ -51,7 +50,7 @@ export class DeleteShowroomComponent implements OnInit {
       });
     this.getBranches()
       .subscribe((data: any) => {
-        this.currentShowrooms = data as Showroom[];
+        this.currentBranches = data as Branch[];
       });
   }
 

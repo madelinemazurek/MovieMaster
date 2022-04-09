@@ -15,4 +15,12 @@ export class CustomerService {
     return this.webReqService.post('Customers', customer)
   }
 
+  deleteCustomer(pk : string){
+    return this.webReqService.delete(pk)
+  }
+
+  getAllCustomers() {
+    return this.webReqService.get('Customers')
+  }
+
 }

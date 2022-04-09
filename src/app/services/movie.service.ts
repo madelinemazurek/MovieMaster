@@ -14,6 +14,13 @@ export class MovieService {
   constructor(private webReqService: WebRequestService) { }
 
   //add methods here
+  getAllMovies() {
+    return this.webReqService.get('Movies')
+  }
 
+  deleteMovie(pk : string){
+    return this.webReqService.delete(pk)
+  }
+  
   
 }

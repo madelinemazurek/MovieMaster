@@ -28,7 +28,6 @@ export class DeleteBranchComponent implements OnInit {
 
   currentBranches: Branch[] = [];
   Branch = new Branch();
-  pk: string = "";
 
   ngOnInit(): void {
     this.getBranches()

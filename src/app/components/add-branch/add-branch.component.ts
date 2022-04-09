@@ -11,22 +11,29 @@ import { Theater } from 'src/app/models/theater-model';
 
   <div>
       <mat-form-field appearance="fill">
+        <mat-label>Input BranchID</mat-label>
+        <input matInput type="branch.BranchID" required BranchID="BranchID" #BranchID="ngModel" [(ngModel)]="Branch.branchID">
+      </mat-form-field>
+  </div>
+
+  <div>
+      <mat-form-field appearance="fill">
         <mat-label>Input BranchName</mat-label>
-        <input matInput type="branch.BranchName" required BranchName="BranchName" #BranchName="ngModel" [(ngModel)]="Branch.BranchName">
+        <input matInput type="branch.BranchName" required BranchName="BranchName" #BranchName="ngModel" [(ngModel)]="Branch.branchName">
       </mat-form-field>
   </div>
   
   <div>
       <mat-form-field appearance="fill">
         <mat-label>Input Address</mat-label>
-        <input matInput type="branch.Address" required Address="Address" #Address="ngModel" [(ngModel)]="Branch.Address">
+        <input matInput type="branch.Address" required Address="Address" #Address="ngModel" [(ngModel)]="Branch.address">
       </mat-form-field>
   </div>
   <!-- type="branch.TheaterName" -->
   <div>
       <mat-form-field appearance="fill">
         <mat-label>Select TheaterName</mat-label>
-        <mat-select required name="TheaterName" #TheaterName="ngModel" [(ngModel)]="Branch.TheaterName">
+        <mat-select required name="TheaterName" #TheaterName="ngModel" [(ngModel)]="Branch.theaterName">
           <mat-option *ngFor="let currTheater of currentTheaters" [value]="currTheater.name"> 
             {{currTheater.name}} 
           </mat-option>

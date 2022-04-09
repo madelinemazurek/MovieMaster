@@ -9,6 +9,13 @@ export class TicketService {
   constructor(private webReqService: WebRequestService) { }
 
   //add methods here
+  getAllTickets() {
+    return this.webReqService.get('Tickets')
+  }
 
+  deleteTicket(pk : string){
+    return this.webReqService.delete(pk)
+  }
+  
   
 }

@@ -9,6 +9,13 @@ export class ShowroomService {
   constructor(private webReqService: WebRequestService) { }
 
   //add methods here
+  getAllShowrooms() {
+    return this.webReqService.get('Showrooms')
+  }
+
+  deleteShowroom(pk : string){
+    return this.webReqService.delete(pk)
+  }
 
   
 }

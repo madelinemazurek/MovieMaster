@@ -1,3 +1,5 @@
+//get and display all showings in the database as filtered by city or theater name
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

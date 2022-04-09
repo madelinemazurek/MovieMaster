@@ -21,10 +21,10 @@ namespace MovieMasterAPI.FrontEndModels
        // public List<Showroom> Showrooms { get; set; }
 
         [Required]
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
-        public TimeOnly Time { get; set; }
+        public DateTime Time { get; set; }
 
 
      //   [ForeignKey("AdminEmail")]

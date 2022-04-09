@@ -16,12 +16,6 @@ export class TheaterService {
 
   getAllTheaters() {
     return this.webReqService.get('Theaters')
-    //   .map((response: Response) => <Theater[]>response.json())
-
-    // return this.webReqService.get('Theaters')
-    //   .then(response => <Theater[]>response.json())
-
-    //return this.webReqService.get<Theater[]>('Theaters');
   }
 
   deleteTheater(pk : string){

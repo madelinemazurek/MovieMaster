@@ -6,26 +6,26 @@ namespace MovieMasterAPI.FrontEndModels
     public class Customer
     {
         [Key]
-        public string BuyerEmail { get; set; }
+        public string email { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string FName { get; set; }
+        public string fName { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string LName { get; set; }
+        public string lName { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string Password { get; set; }
+        public string password { get; set; }
 
         [Column(TypeName = "nvarchar(3)")]
-        public string CVV { get; set; }
+        public string cVV { get; set; }
 
         [Column(TypeName = "nvarchar(16)")]
-        public string FCardNumber { get; set; }
+        public string cardNumber { get; set; }
 
         // mm/dd/yyyy
         [Column(TypeName = "nvarchar(10)")]
-        public string ExpirationDate { get; set; }
+        public string expirationDate { get; set; }
 
 
     }

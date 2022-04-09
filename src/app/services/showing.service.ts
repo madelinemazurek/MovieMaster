@@ -9,6 +9,8 @@ export class ShowingService {
   constructor(private webReqService: WebRequestService) { }
 
   //add methods here
-
+  getAllShowings() {
+    return this.webReqService.get('Showings')
+  }
   
 }

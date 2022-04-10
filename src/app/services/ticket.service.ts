@@ -17,5 +17,8 @@ export class TicketService {
     return this.webReqService.delete(pk)
   }
   
-  
+  addTicket(ticket : Tickets){
+    return this.webReqService.post('Tickets', ticket)
+  }
+
 }

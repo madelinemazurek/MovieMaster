@@ -14,8 +14,8 @@ namespace MovieMasterAPI.FrontEndModels
     [Column(TypeName = "nvarchar(10)")]
     public string ageRange { get; set; }
 
-    [Column(TypeName = "double")]
-    public double price { get; set; }
+    [Column(TypeName = "nvarchar(100)")]
+    public string price { get; set; }
 
     [Column(TypeName = "int")]
     public int seatNo { get; set; }

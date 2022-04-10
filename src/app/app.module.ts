@@ -14,6 +14,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 
 import { LoginComponent } from './components/login/login.component';
@@ -56,6 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TheaterService } from 'src/app/services/theater.service';
 import { WebRequestService } from './services/web-request.service';
 import { BranchService } from './services/branch.service';
+
 
 @NgModule({
   declarations: [
@@ -109,7 +111,8 @@ import { BranchService } from './services/branch.service';
     BrowserAnimationsModule,
     HttpClientModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [
     TheaterService,

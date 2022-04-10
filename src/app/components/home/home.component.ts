@@ -1,8 +1,9 @@
 //get and display all showings in the database as filtered by city or theater name
 
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+//import { MatTableDataSource } from '@angular/material/table';
 import { Showing } from 'src/app/models/showing-model';
+import { ticketGlobals } from 'src/app/models/ticketGlobals';
 import { ShowingService } from 'src/app/services/showing.service';
 
 @Component({
@@ -42,7 +43,7 @@ import { ShowingService } from 'src/app/services/showing.service';
         <td><span>{{currentShowings.time}}</span></td>
         <td><span>{{currentShowings.showRoomNo}}</span></td>
         <td><span>{{currentShowings.branchID}}</span></td>
-        <td><span><button routerLink = "/ticketselect">View Tickets</button></span></td>
+        <td><span><button (click) = "findTickets(currentShowings.date,currentShowings.time,currentShowings.showRoomNo,currentShowings.branchID)" routerLink = "/ticketselect">View Tickets</button></span></td>
       </tr>
     </tbody>
   </table>
@@ -69,6 +70,14 @@ export class HomeComponent implements OnInit {
 
   getShowings() {
     return this.showingService.getAllShowings();
+  }
+
+  findTickets(date : string, time : string, showRoomNo : Number, branchID : Number ){
+    ticketGlobals.date = date;
+    ticketGlobals.time = time;
+    ticketGlobals.showRoomNo = showRoomNo;
+    ticketGlobals.branchID = branchID;
+    //console.log(ticketGlobals.date);
   }
 
 }

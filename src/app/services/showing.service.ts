@@ -16,6 +16,10 @@ export class ShowingService {
   deleteShowing(pk : string){
     return this.webReqService.delete(pk)
   }
+
+  deleteShows(pk : string){
+    return this.webReqService.delete(pk)
+  }
   
   addShows(shows : Shows){
     return this.webReqService.post('Shows', shows)

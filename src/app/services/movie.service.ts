@@ -22,5 +22,27 @@ export class MovieService {
     return this.webReqService.delete(pk)
   }
   
-  
+  createMovie(movie : Movie){
+    return this.webReqService.post('Movies', movie)
+  }
+
+  addMovieWriter(movieWriter : Movie_Writer){
+    return this.webReqService.post('Movie_Writer', movieWriter)
+  }
+
+  addMovieProducer(movieProducer : Movie_Producer){
+    return this.webReqService.post('Movie_Producer', movieProducer)
+  }
+
+  addMovieCast(movieCast : Movie_Cast){
+    return this.webReqService.post('Movie_Cast', movieCast)
+  }
+
+  addMovieGenre(movieGenre : Movie_Genre){
+    return this.webReqService.post('Movie_Genre', movieGenre)
+  }
+
+  addMovieDirector(MovieDirector : Movie_Director){
+    return this.webReqService.post('Movie_Director', MovieDirector)
+  }
 }

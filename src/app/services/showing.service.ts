@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WebRequestService } from './web-request.service';
 import { Showing } from 'src/app/models/showing-model';
+import { Shows } from 'src/app/models/shows-model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,4 +14,12 @@ export class ShowingService {
     return this.webReqService.get('Showings')
   }
   
+  addShows(shows : Shows){
+    return this.webReqService.post('Shows', shows)
+  }
+
+  addShowing(showing : Showing){
+    return this.webReqService.post('Showings', showing)
+  }
+
 }

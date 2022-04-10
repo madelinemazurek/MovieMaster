@@ -45,4 +45,28 @@ export class MovieService {
   addMovieDirector(MovieDirector : Movie_Director){
     return this.webReqService.post('Movie_Director', MovieDirector)
   }
+
+  deleteMovieElement(pk : string){
+    return this.webReqService.delete(pk)
+  }
+
+  getAllMovieCast() {
+    return this.webReqService.get('Movie_Cast')
+  }
+
+  getAllMovieDirector() {
+    return this.webReqService.get('Movie_Director')
+  }
+
+  getAllMovieGenre() {
+    return this.webReqService.get('Movie_Genre')
+  }
+
+  getAllMovieProducer() {
+    return this.webReqService.get('Movie_Producer')
+  }
+
+  getAllMovieWriter() {
+    return this.webReqService.get('Movie_Writer')
+  }
 }

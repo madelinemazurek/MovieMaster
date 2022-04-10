@@ -5,7 +5,7 @@ import { Movie_Genre } from 'src/app/models/movie-genre-model';
 
 @Component({
   selector: 'app-add-genre-cast',
-  template: `<h1 style="font-size: xx-large;"> ADD MOVIE CAST</h1>
+  template: `<h1 style="font-size: xx-large;"> ADD MOVIE GENRE</h1>
 
   <div>
       <mat-form-field appearance="fill">
@@ -20,7 +20,7 @@ import { Movie_Genre } from 'src/app/models/movie-genre-model';
   
   <div>
       <mat-form-field appearance="fill">
-        <mat-label>Input CastMemberName</mat-label>
+        <mat-label>Input Genre</mat-label>
         <input matInput type="movieGenre.genre" required genre="genre" #name="ngModel" [(ngModel)]="movieGenre.genre">
       </mat-form-field>
   </div>

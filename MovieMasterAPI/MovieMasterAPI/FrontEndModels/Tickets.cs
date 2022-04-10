@@ -15,6 +15,7 @@ namespace MovieMasterAPI.FrontEndModels
     public string ageRange { get; set; }
 
     [Column(TypeName = "nvarchar(100)")]
+
     public string price { get; set; }
 
     [Column(TypeName = "int")]

@@ -56,3 +56,38 @@ Include:
     </div>
 </mat-card>
 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="MovieTitle">
+    <th mat-header-cell *matHeaderCellDef> MovieTitle </th>
+    <td mat-cell *matCellDef="let currentShowing"> {{Showing.movieTitle}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Date">
+  <th mat-header-cell *matHeaderCellDef> Date </th>
+  <td mat-cell *matCellDef="let currentShowing"> {{Showing.date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Time">
+  <th mat-header-cell *matHeaderCellDef> Time </th>
+  <td mat-cell *matCellDef="let currentShowing"> {{Showing.time}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ShowRoomNo">
+  <th mat-header-cell *matHeaderCellDef> ShowRoomNo </th>
+  <td mat-cell *matCellDef="let currentShowing"> {{Showing.showRoomNo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="BranchID">
+  <th mat-header-cell *matHeaderCellDef> BranchID </th>
+  <td mat-cell *matCellDef="let currentShowings"> {{Showing.branchID}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

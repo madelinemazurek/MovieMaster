@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MovieMasterAPI.FrontEndModels;
 
@@ -42,9 +43,28 @@ namespace MovieMasterAPI.Controllers
             return tickets;
         }
 
-        // PUT: api/Tickets/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        // GET: api/Tickets/5/5/5/5
+        [HttpGet("{date}/{time}/{showRoomNo}/{branchID}")]
+        public async Task<ActionResult<IEnumerable<Tickets>>> GetTickets(string date, string time, int showRoomNo, int branchID)
+        {
+          var dateParam = new SqlParameter("@date", date);
+          var timeParam = new SqlParameter("@time", time);
+          var showRoomNoParam = new SqlParameter("@showRoomNo", showRoomNo);
+          var branchIDParam = new SqlParameter("@branchID", branchID);
+
+          var tickets = _context.Tickets.FromSqlRaw("Execute dbo.getTickets @date, @time, @showRoomNo, @branchID", dateParam, timeParam, showRoomNoParam, branchIDParam).ToList();
+
+          if (tickets == null)
+          {
+            return NotFound();
+          }
+
+          return tickets;
+        }
+
+    // PUT: api/Tickets/5
+    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+    [HttpPut("{id}")]
         public async Task<IActionResult> PutTickets(int id, Tickets tickets)
         {
             if (id != tickets.ticketID)

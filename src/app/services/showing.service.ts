@@ -13,6 +13,9 @@ export class ShowingService {
   getAllShowings() {
     return this.webReqService.get('Showings')
   }
+  deleteShowing(pk : string){
+    return this.webReqService.delete(pk)
+  }
   
   addShows(shows : Shows){
     return this.webReqService.post('Shows', shows)

@@ -5,8 +5,8 @@ import { Theater } from 'src/app/models/theater-model';
 @Component({
   selector: 'app-add-theater',
   //templateUrl: './add-theater.component.html',
-  template: `
-  <h1 style="font-size: xx-large;"> ADD THEATER</h1>
+  template: 
+  `<h1 style="font-size: xx-large;"> ADD THEATER</h1>
   <div>
       <mat-form-field appearance="fill" hideRequiredMarker>
         <mat-label>Input Theater Name</mat-label>
@@ -15,8 +15,7 @@ import { Theater } from 'src/app/models/theater-model';
   </div>
     
   <button mat-button routerLink="/adminPage">Back</button>
-  <button mat-button (click)="createNewTheater()" routerLink="/adminPage">Submit</button>
-  `, 
+  <button mat-button (click)="createNewTheater()" routerLink="/adminPage">Submit</button>`, 
   styleUrls: ['./add-theater.component.css']
 })
 

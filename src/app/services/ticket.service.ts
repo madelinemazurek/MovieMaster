@@ -17,5 +17,8 @@ export class TicketService {
     return this.webReqService.delete(pk)
   }
   
+  getOneTicket(pk : Number) {
+    return this.webReqService.get('Tickets/'+pk);
+  }
   
 }

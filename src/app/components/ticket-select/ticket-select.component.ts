@@ -62,7 +62,8 @@ export class TicketSelectComponent implements OnInit {
   }
 
   purchaseTickets(ticketID : Number){
-    console.log(ticketID)
+    //console.log(ticketID)
+    ticketGlobals.ticketID = ticketID;
   }
 
 }

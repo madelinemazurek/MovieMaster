@@ -16,5 +16,10 @@ export class SystemAdminService {
   deleteSystemAdmin(pk : string){
     return this.webReqService.delete(pk)
   }
+
+  createAdmin(admin : System_Admin){
+    // Theater is the object payload that will be added to the database
+    return this.webReqService.post('System_Admin', admin)
+  }
   
 }

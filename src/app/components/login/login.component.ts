@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Customer } from 'src/app/models/customer-model';
+import{ globals } from 'src/app/models/globals';
 
 @Component({
   selector: 'app-login',
@@ -51,9 +52,14 @@ export class LoginComponent implements OnInit {
 
   validate(){
     for(let i = 0; i<this.currentCustomers.length;  i++){
-      if(this.Customer.password == this.currentCustomers[i].password && this.Customer.email == this.currentCustomers[i].email) return true;
+      if(this.Customer.password == this.currentCustomers[i].password && this.Customer.email == this.currentCustomers[i].email){ 
+        globals.userLog = true;
+        globals.cardNumber = this.Customer.cardNumber;
+        globals.cVV = this.Customer.cVV;
+        globals.expirationDate = this.Customer.expirationDate;
+        console.log("Good log");
+      }
     }
-    return false;
   }
 
 }

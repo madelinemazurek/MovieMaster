@@ -35,6 +35,8 @@ import { DeleteShowsComponent } from './components/delete-shows/delete-shows.com
 import { DeleteSystemAdminComponent } from './components/delete-system-admin/delete-system-admin.component';
 import { DeleteTheaterComponent } from './components/delete-theater/delete-theater.component';
 import { DeleteTicketsComponent } from './components/delete-tickets/delete-tickets.component';
+import { UserValidationService } from './services/user-validation.service';
+import { AdminValidationService } from './services/admin-validation.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -42,9 +44,9 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'about', component: AboutComponent},
   {path: 'adminlogin', component: AdminloginComponent},
-  {path: 'adminPage', component: AdminPageComponent},
+  {path: 'adminPage', component: AdminPageComponent, canActivate:[AdminValidationService]},
   {path: 'ticketselect', component: TicketSelectComponent},
-  {path: 'checkout', component: CheckoutComponent},
+  {path: 'checkout', component: CheckoutComponent, canActivate:[UserValidationService]},
   {path: 'addTheater', component: AddTheaterComponent},
   {path: 'addShow', component:AddShowsComponent},
   {path: 'addBranch', component:AddBranchComponent},
@@ -76,6 +78,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [UserValidationService, AdminValidationService]
 })
 export class AppRoutingModule { }

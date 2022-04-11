@@ -41,7 +41,7 @@ import { ShowingService } from 'src/app/services/showing.service';
           <td><span>{{currentShowings.time}}</span></td>
           <td><span>{{currentShowings.showRoomNo}}</span></td>
           <td><span>{{currentShowings.branchID}}</span></td>
-          <td><span><button (click) = "findTickets(currentShowings.date,currentShowings.time,currentShowings.showRoomNo,currentShowings.branchID)" routerLink = "/ticketselect">View Tickets</button></span></td>
+          <td><span><button (click) = "findTickets(currentShowings.date,currentShowings.time,currentShowings.showRoomNo,currentShowings.branchID, currentShowings.movieTitle)" routerLink = "/ticketselect">View Tickets</button></span></td>
         </tr>
       </tbody>
     </table>
@@ -77,7 +77,7 @@ import { ShowingService } from 'src/app/services/showing.service';
           <td><span>{{currentShowings.time}}</span></td>
           <td><span>{{currentShowings.showRoomNo}}</span></td>
           <td><span>{{currentShowings.branchID}}</span></td>
-          <td><span><button (click) = "findTickets(currentShowings.date,currentShowings.time,currentShowings.showRoomNo,currentShowings.branchID)" routerLink = "/ticketselect">View Tickets</button></span></td>
+          <td><span><button (click) = "findTickets(currentShowings.date,currentShowings.time,currentShowings.showRoomNo,currentShowings.branchID,currentShowings.movieTitle)" routerLink = "/ticketselect">View Tickets</button></span></td>
         </tr>
       </tbody>
     </table>
@@ -109,11 +109,12 @@ export class HomeComponent implements OnInit {
     return this.showingService.getAllShowings();
   }
 
-  findTickets(date : string, time : string, showRoomNo : Number, branchID : Number ){
+  findTickets(date : string, time : string, showRoomNo : Number, branchID : Number, movieTitle : string ){
     ticketGlobals.date = date;
     ticketGlobals.time = time;
     ticketGlobals.showRoomNo = showRoomNo;
     ticketGlobals.branchID = branchID;
+    ticketGlobals.movieTitle = movieTitle;
     //console.log(ticketGlobals.date);
   }
 

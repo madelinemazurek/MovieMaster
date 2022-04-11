@@ -4,4 +4,5 @@ export class ticketGlobals{
     static time : string; 
     static showRoomNo : Number; 
     static branchID : Number;
+    static movieTitle : string;
 }

@@ -25,4 +25,8 @@ export class TicketService {
     return this.webReqService.post('Tickets', ticket)
   }
 
+  updateTicket(pk:string, ticket : Tickets){
+    return this.webReqService.put(pk,ticket);
+  }
+
 }

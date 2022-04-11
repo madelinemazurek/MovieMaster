@@ -51,7 +51,7 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
           <td><span>{{currShow.time}}</span></td>
           <td><span>{{currShow.showRoomNo}}</span></td>
           <td><span>{{findBranchName(currShow.branchID)}}</span></td>
-          <td><span><button (click) = "findTickets(currShow.date,currShow.time,currShow.showRoomNo,currShow.branchID)" routerLink = "/ticketselect">View Tickets</button></span></td>
+          <td><span><button (click) = "findTickets(currShow.date,currShow.time,currShow.showRoomNo,currShow.branchID, currShow.movieTitle)" routerLink = "/ticketselect">View Tickets</button></span></td>
           <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -105,7 +105,7 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
           <td><span>{{currShow.time}}</span></td>
           <td><span>{{currShow.showRoomNo}}</span></td>
           <td><span>{{findBranchName(currShow.branchID)}}</span></td>
-          <td><span><button (click) = "findTickets(currShow.date,currShow.time,currShow.showRoomNo,currShow.branchID)" routerLink = "/ticketselect">View Tickets</button></span></td>
+          <td><span><button (click) = "findTickets(currShow.date,currShow.time,currShow.showRoomNo,currShow.branchID, currShow.movieTitle)" routerLink = "/ticketselect">View Tickets</button></span></td>
           <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -245,11 +245,13 @@ export class HomeComponent implements OnInit {
     return this.showingService.getTheaterShowings(this.theaterVal);
   }
 
-  findTickets(date : string, time : string, showRoomNo : Number, branchID : Number ){
+   findTickets(date : string, time : string, showRoomNo : Number, branchID : Number, movieTitle : string ){
     ticketGlobals.date = date;
     ticketGlobals.time = time;
     ticketGlobals.showRoomNo = showRoomNo;
     ticketGlobals.branchID = branchID;
+    ticketGlobals.movieTitle = movieTitle;
+    //console.log(ticketGlobals.date);
   }
 
   findBranchName(branchID : Number) {

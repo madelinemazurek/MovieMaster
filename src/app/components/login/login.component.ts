@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Customer } from 'src/app/models/customer-model';
 import{ globals } from 'src/app/models/globals';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +35,7 @@ import{ globals } from 'src/app/models/globals';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private customerService : CustomerService) { }
+  constructor(private customerService : CustomerService, private router: Router) { }
 
   Customer = new Customer();
   currentCustomers: Customer[] = [];
@@ -54,10 +55,11 @@ export class LoginComponent implements OnInit {
     for(let i = 0; i<this.currentCustomers.length;  i++){
       if(this.Customer.password == this.currentCustomers[i].password && this.Customer.email == this.currentCustomers[i].email){ 
         globals.userLog = true;
-        globals.cardNumber = this.Customer.cardNumber;
-        globals.cVV = this.Customer.cVV;
-        globals.expirationDate = this.Customer.expirationDate;
-        console.log("Good log");
+        globals.cardNumber = this.currentCustomers[i].cardNumber;
+        globals.cVV = this.currentCustomers[i].cVV;
+        globals.expirationDate = this.currentCustomers[i].expirationDate;
+        globals.buyerEmail = this.currentCustomers[i].email;
+        this.router.navigate(['/']);
       }
     }
   }

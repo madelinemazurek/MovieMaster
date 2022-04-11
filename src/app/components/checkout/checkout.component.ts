@@ -10,6 +10,7 @@ import { TicketService } from 'src/app/services/ticket.service';
   template: 
   
   `<h1 style="font-size: xx-large;"> CHECKOUT</h1>
+  
   <table class = "table table-bordered">
   <thead>
     <tr>
@@ -24,14 +25,14 @@ import { TicketService } from 'src/app/services/ticket.service';
     </tr>
     </thead>
     <tbody>
-      <td><span>{{movieTitle}}</span></td>
-      <td><span>{{date}}</span></td>
-      <td><span>{{time}}</span></td>
-      <td><span>{{seatNo}}</span></td>
-      <td><span>{{row}}</span></td>
-      <td><span>{{showRoomNo}}</span></td>
-      <td><span>{{type}}</span></td>
-      <td><span>{{price}}</span></td>
+      <td>{{movieTitle}}</td>
+      <td>{{date}}</td>
+      <td>{{time}}</td>
+      <td>{{seatNo}}</td>
+      <td>{{row}}</td>
+      <td>{{showRoomNo}}</td>
+      <td>{{type}}</td>
+      <td>{{price}}</td>
     </tbody>
   </table>
   <div>Total: {{total}}</div>
@@ -49,6 +50,7 @@ export class CheckoutComponent implements OnInit {
   constructor(private ticketService: TicketService) { }
 
   //displayed information
+
   movieTitle : string = ticketGlobals.movieTitle;
   date : string[] = Cart.date;
   time : string[] = Cart.time;
@@ -61,6 +63,9 @@ export class CheckoutComponent implements OnInit {
   ageRange : string[] = Cart.ageRange;
   branchID : Number[] = Cart.branchID;
   total : Number = Cart.total;
+
+  dateString = Cart.date.join().replace(',','\n');
+
 
   tickets = new Tickets();
 

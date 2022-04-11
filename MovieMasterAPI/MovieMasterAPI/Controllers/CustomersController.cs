@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MovieMasterAPI.FrontEndModels;
 
@@ -76,9 +77,18 @@ namespace MovieMasterAPI.Controllers
         // POST: api/Customers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
+        public async Task<ActionResult<IEnumerable<Customer>>> PostCustomer(Customer customer)
         {
-            _context.Customer.Add(customer);
+            var emailParam = new SqlParameter("@email", customer.email);
+            var FNameParam = new SqlParameter("@FName", customer.fName);
+            var LNameParam = new SqlParameter("@LName", customer.lName);
+            var PasswordParam = new SqlParameter("@Password", customer.password);
+            var CVVParam = new SqlParameter("@CVV", customer.cVV);
+            var CardNumberParam = new SqlParameter("@CardNumber", customer.cardNumber);
+            var ExpirationDateParam = new SqlParameter("@ExpirationDate", customer.expirationDate);
+
+            var tickets = _context.Database.ExecuteSqlRaw("Execute dbo.signup @email, @FName, @LName, @Password, @CVV, @CardNumber, @ExpirationDate" ,emailParam,FNameParam,LNameParam,PasswordParam,CVVParam,CardNumberParam,ExpirationDateParam);
+            //_context.Customer.Add(customer);
             try
             {
                 await _context.SaveChangesAsync();

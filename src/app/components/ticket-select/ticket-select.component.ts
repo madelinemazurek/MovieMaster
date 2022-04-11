@@ -36,7 +36,7 @@ import { Cart } from 'src/app/models/cart';
         <td><span>{{currentTickets.seatNo}}</span></td>
         <td><span>{{currentTickets.ageRange}}</span></td>
         <td><span>{{currentTickets.type}}</span></td>
-        <td><span><button (click) = "addTicketToCart(currentTickets.date, currentTickets.time, currentTickets.seatNo, currentTickets.row, currentTickets.price, currentTickets.showRoomNo, currentTickets.ticketID,currentTickets.type, currentTickets.branchID, currentTickets.ageRange)">Add Ticket to Cart</button></span></td>
+        <td><span><button (click) = "disable($event);addTicketToCart(currentTickets.date, currentTickets.time, currentTickets.seatNo, currentTickets.row, currentTickets.price, currentTickets.showRoomNo, currentTickets.ticketID,currentTickets.type, currentTickets.branchID, currentTickets.ageRange)">Add Ticket to Cart</button></span></td>
       </tr>
     </tbody>
   </table>
@@ -58,6 +58,10 @@ export class TicketSelectComponent implements OnInit {
     .subscribe((data: any) => {
       this.currentTickets = data as Tickets[];
     });
+  }
+
+  disable(event: any){
+    event.target.disabled = true;
   }
 
   getTickets(){

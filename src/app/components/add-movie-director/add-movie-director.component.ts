@@ -5,7 +5,7 @@ import { Movie_Director } from 'src/app/models/movie-director-model';
 
 @Component({
   selector: 'app-add-director-cast',
-  template: `<h1 style="font-size: xx-large;"> ADD MOVIE CAST</h1>
+  template: `<h1 style="font-size: xx-large;"> ADD MOVIE DIRECTOR</h1>
 
   <div>
       <mat-form-field appearance="fill">

@@ -99,7 +99,7 @@ namespace MovieMasterAPI.Controllers
         }
 
         // DELETE: api/Movie_Writer/5/5
-        [HttpDelete("{keyOne}/{key2}")]
+        [HttpDelete("{keyOne}/{keyTwo}")]
         public async Task<IActionResult> DeleteMovie_Writer(string keyOne,string keyTwo)
         {
             var movie_Writer = await _context.Movie_Writer.FindAsync(keyOne,keyTwo);

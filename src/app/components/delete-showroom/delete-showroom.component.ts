@@ -10,7 +10,7 @@ import { Branch } from 'src/app/models/branch-model';
   `<h1 style="font-size: xx-large;"> DELETE SHOWROOM</h1>
   <div>
       <mat-form-field appearance="fill">
-        <mat-label>Select Showroom Nummber</mat-label>
+        <mat-label>Select Showroom Number</mat-label>
         <mat-select required name="showroomNo" #showroomNo="ngModel" [(ngModel)]="Showroom.showRoomNo">
           <mat-option *ngFor="let currShowroom of currentShowrooms" [value]="currShowroom.showRoomNo"> 
             {{currShowroom.showRoomNo}} 

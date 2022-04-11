@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MovieMasterAPI.FrontEndModels;
 
@@ -42,9 +43,25 @@ namespace MovieMasterAPI.Controllers
             return movie_Cast;
         }
 
-        // PUT: api/Movie_Cast/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        // GET: api/Movie_Cast/Search/Shrek
+        [HttpGet("Search/{val}")]
+        public async Task<ActionResult<IEnumerable<Movie_Cast>>> GetCast(string val)
+        {
+          var SearchParam = new SqlParameter("@val", val);
+
+          var cast = _context.Movie_Cast.FromSqlRaw("Execute dbo.searchMovieCast @val", SearchParam).ToList();
+
+          if (cast == null)
+          {
+            return NotFound();
+          }
+
+          return cast;
+        }
+
+    // PUT: api/Movie_Cast/5
+    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+    [HttpPut("{id}")]
         public async Task<IActionResult> PutMovie_Cast(string id, Movie_Cast movie_Cast)
         {
             if (id != movie_Cast.movieTitle)

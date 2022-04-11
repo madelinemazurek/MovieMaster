@@ -55,7 +55,7 @@ namespace MovieMasterAPI.Controllers
         }
 
 
-        private bool ShowingExists(string id)
+    private bool ShowingExists(string id)
             {
                 return _context.Showing.Any(e => e.date == id);
             }

@@ -52,7 +52,7 @@ export class AdminloginComponent implements OnInit {
     for(let i = 0; i<this.currentSystemAdmin.length;  i++){
       if(this.SystemAdmin.password == this.currentSystemAdmin[i].password && this.SystemAdmin.email == this.currentSystemAdmin[i].email){ 
         globals.adminLog = true;
-        console.log("Good log");
+        //console.log("Good log");
       }
     }
   }

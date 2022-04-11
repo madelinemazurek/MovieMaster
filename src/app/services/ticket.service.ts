@@ -17,8 +17,16 @@ export class TicketService {
     return this.webReqService.delete(pk)
   }
   
+  getOneTicket(pk : Number) {
+    return this.webReqService.get('Tickets/'+pk);
+  }
+  
   addTicket(ticket : Tickets){
     return this.webReqService.post('Tickets', ticket)
+  }
+
+  updateTicket(pk:string, ticket : Tickets){
+    return this.webReqService.put(pk,ticket);
   }
 
 }

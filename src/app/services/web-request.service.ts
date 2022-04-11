@@ -16,6 +16,11 @@ export class WebRequestService {
     return this.http.get(`${this.ROOT_URL}/${uri}`);
   }
 
+  search(uri : string){
+    console.log(`${this.ROOT_URL}/${uri}`)
+    return this.http.get(`${this.ROOT_URL}/${uri}`);
+  }
+
   post(uri : string, payload: Object){
     return this.http.post(`${this.ROOT_URL}/${uri}`, payload)
   }

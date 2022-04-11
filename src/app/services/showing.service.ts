@@ -13,6 +13,16 @@ export class ShowingService {
   getAllShowings() {
     return this.webReqService.get('Showings')
   }
+
+  getCityShowings(val : string) {
+    return this.webReqService.search('Search/City/' + val)
+  }
+
+  getTheaterShowings(val : string) {
+    return this.webReqService.search('Search/Theater/' + val)
+  }
+
+
   deleteShowing(pk : string){
     return this.webReqService.delete(pk)
   }

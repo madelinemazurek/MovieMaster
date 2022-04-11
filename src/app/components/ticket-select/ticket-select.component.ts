@@ -6,8 +6,7 @@ import { WebRequestService } from 'src/app/services/web-request.service';
 
 @Component({
   selector: 'app-ticket-select',
-  template: 
-  `<h1 style="font-size: xx-large;"> TICKET SELECT</h1>
+  template: `<h1 style="font-size: xx-large;"> TICKET SELECT</h1>
   <table class = "table table-bordered">
   <thead>
     <tr>
@@ -40,7 +39,8 @@ import { WebRequestService } from 'src/app/services/web-request.service';
       </tr>
     </tbody>
   </table>
-`,
+  `,
+
   styleUrls: ['./ticket-select.component.css']
 })
 export class TicketSelectComponent implements OnInit {

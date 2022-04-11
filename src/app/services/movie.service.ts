@@ -69,4 +69,25 @@ export class MovieService {
   getAllMovieWriter() {
     return this.webReqService.get('Movie_Writer')
   }
+
+  getCastForMovie(val : string) {
+    return this.webReqService.search('Movie_Cast/Search/' + val)
+  }
+
+  getDirectorsForMovie(val : string) {
+    return this.webReqService.search('Movie_Director/Search/' + val)
+  }
+
+  getGenresForMovie(val : string) {
+    return this.webReqService.search('Movie_Genre/Search/' + val)
+  }
+
+  getProducersForMovie(val : string) {
+    return this.webReqService.search('Movie_Producer/Search/' + val)
+  }
+
+  getWritersForMovie(val : string) {
+    return this.webReqService.search('Movie_Writer/Search/' + val)
+  }
+
 }

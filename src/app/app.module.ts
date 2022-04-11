@@ -15,7 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
@@ -57,7 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TheaterService } from 'src/app/services/theater.service';
 import { WebRequestService } from './services/web-request.service';
 import { BranchService } from './services/branch.service';
-
+import { MatExpansionPanel } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -96,7 +96,7 @@ import { BranchService } from './services/branch.service';
     DeleteMovieProducerComponent,
     DeleteMovieCastComponent,
     DeleteMovieGenreComponent,
-    DeleteMovieDirectorComponent,
+    DeleteMovieDirectorComponent
   ],
   imports: [
     MatSelectModule,
@@ -112,7 +112,8 @@ import { BranchService } from './services/branch.service';
     HttpClientModule,
     MatFormFieldModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule
   ],
   providers: [
     TheaterService,

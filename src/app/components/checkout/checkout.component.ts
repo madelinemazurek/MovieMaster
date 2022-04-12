@@ -35,7 +35,7 @@ import { TicketService } from 'src/app/services/ticket.service';
     </tr>
     </tbody>
   </table>
-  <div>Total: {{total}}</div>
+  <div>Total: \${{total}}</div>
   <h2 style = "font-size: large;">Payment Information:</h2>
   <div>CardNumber: {{cardNumber}}</div>
   <div>CVV: {{cVV}}</div>

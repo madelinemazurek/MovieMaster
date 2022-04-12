@@ -35,6 +35,7 @@ import { DeleteShowsComponent } from './components/delete-shows/delete-shows.com
 import { DeleteSystemAdminComponent } from './components/delete-system-admin/delete-system-admin.component';
 import { DeleteTheaterComponent } from './components/delete-theater/delete-theater.component';
 import { DeleteTicketsComponent } from './components/delete-tickets/delete-tickets.component';
+import { SuccessComponent } from './components/success/success.component';
 import { UserValidationService } from './services/user-validation.service';
 import { AdminValidationService } from './services/admin-validation.service';
 
@@ -73,7 +74,8 @@ const routes: Routes = [
   {path: 'deleteShows', component:DeleteShowsComponent},
   {path: 'deleteSystemAdmin', component:DeleteSystemAdminComponent},
   {path: 'deleteTheater', component:DeleteTheaterComponent},
-  {path: 'deleteTicket', component:DeleteTicketsComponent}
+  {path: 'deleteTicket', component:DeleteTicketsComponent},
+  {path: 'success', component:SuccessComponent}
 ];
 
 @NgModule({

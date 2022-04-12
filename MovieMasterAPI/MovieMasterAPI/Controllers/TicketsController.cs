@@ -62,6 +62,20 @@ namespace MovieMasterAPI.Controllers
           return tickets;
         }
 
+        // GET: api/Tickets/MaxID
+        [HttpGet("MaxID")]
+        public async Task<ActionResult<IEnumerable<Tickets>>> GetMax()
+        {
+          var res = _context.Tickets.FromSqlRaw("Execute dbo.lastTicket").ToList();
+
+          if (res == null)
+          {
+            return NotFound();
+          }
+
+          return res;
+        }
+
     // PUT: api/Tickets/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]

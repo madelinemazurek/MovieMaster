@@ -25,7 +25,7 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
   <mat-tab label="Search By City">
 
     <div class="SearchCity">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" style = "width: 300px;">
           <mat-label>Search by City</mat-label>
           <input matInput placeholder="Ex. Calgary" type="text" [(ngModel)]="cityVal">
         </mat-form-field>
@@ -76,7 +76,7 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
   <mat-tab label="Search By Theater">
 
     <div class="Search Theater">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" style = "width: 500px;">
         <mat-label>Select Theater:Branch</mat-label>
         <mat-select name="branchID" #branchID="ngModel" [(ngModel)]="theaterVal">
           <mat-option *ngFor="let currBranch of currentBranches" [value]="currBranch.branchID"> 

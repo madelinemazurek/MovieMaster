@@ -52,7 +52,7 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
           <td><span>{{currShow.showRoomNo}}</span></td>
           <td><span>{{findBranchName(currShow.branchID)}}</span></td>
           <td><span><button (click) = "findTickets(currShow.date,currShow.time,currShow.showRoomNo,currShow.branchID, currShow.movieTitle)" routerLink = "/ticketselect">View Tickets</button></span></td>
-          <mat-expansion-panel >
+          <mat-expansion-panel style = "width: 500px;">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 View Movie Information
@@ -106,7 +106,7 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
           <td><span>{{currShow.showRoomNo}}</span></td>
           <td><span>{{findBranchName(currShow.branchID)}}</span></td>
           <td><span><button (click) = "findTickets(currShow.date,currShow.time,currShow.showRoomNo,currShow.branchID, currShow.movieTitle)" routerLink = "/ticketselect">View Tickets</button></span></td>
-          <mat-expansion-panel >
+          <mat-expansion-panel style = "width: 500px;">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 View Movie Information
@@ -256,7 +256,7 @@ export class HomeComponent implements OnInit {
 
   findBranchName(branchID : Number) {
     for (let currBranch of this.currentBranches) {
-      if(currBranch.branchID = branchID) {
+      if(currBranch.branchID == branchID) {
         return currBranch.branchName;
       }
     }

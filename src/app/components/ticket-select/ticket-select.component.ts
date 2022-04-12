@@ -11,14 +11,12 @@ import { Cart } from 'src/app/models/cart';
   <table class = "table table-bordered">
   <thead>
     <tr>
-      <th>TicketID</th>
+      <th>Seat</th>
       <th>Price</th>
       <th>Date</th>
       <th>Time</th>
       <th>BranchID</th>
       <th>ShowRoomNo</th>
-      <th>Row</th>
-      <th>Seat Number</th>
       <th>Age Range</th>
       <th>Type</th>
       <th>Select</th>
@@ -26,14 +24,12 @@ import { Cart } from 'src/app/models/cart';
     </thead>
     <tbody>
       <tr *ngFor = "let currentTickets of currentTickets">
-        <td><span>{{currentTickets.ticketID}}</span></td>
-        <td><span>{{currentTickets.price}}</span></td>
+        <td><span>{{currentTickets.row}}-{{currentTickets.seatNo}}</span></td>
+        <td><span>\${{currentTickets.price}}</span></td>
         <td><span>{{currentTickets.date}}</span></td>
         <td><span>{{currentTickets.time}}</span></td>
         <td><span>{{currentTickets.branchID}}</span></td>
         <td><span>{{currentTickets.showRoomNo}}</span></td>
-        <td><span>{{currentTickets.row}}</span></td>
-        <td><span>{{currentTickets.seatNo}}</span></td>
         <td><span>{{currentTickets.ageRange}}</span></td>
         <td><span>{{currentTickets.type}}</span></td>
         <td><span><button (click) = "disable($event);addTicketToCart(currentTickets.date, currentTickets.time, currentTickets.seatNo, currentTickets.row, currentTickets.price, currentTickets.showRoomNo, currentTickets.ticketID,currentTickets.type, currentTickets.branchID, currentTickets.ageRange)">Add Ticket to Cart</button></span></td>

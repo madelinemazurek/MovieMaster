@@ -7,9 +7,7 @@ import { TicketService } from 'src/app/services/ticket.service';
 
 @Component({
   selector: 'app-checkout',
-  template: 
-  
-  `<h1 style="font-size: xx-large;"> CHECKOUT</h1>
+  template: `<h1 style="font-size: xx-large;"> CHECKOUT</h1>
   
   <table class = "table table-bordered">
   <thead>
@@ -25,14 +23,16 @@ import { TicketService } from 'src/app/services/ticket.service';
     </tr>
     </thead>
     <tbody>
+    <tr *ngFor = "let ticket of ticketID">
       <td>{{movieTitle}}</td>
-      <td>{{date}}</td>
-      <td>{{time}}</td>
-      <td>{{seatNo}}</td>
-      <td>{{row}}</td>
-      <td>{{showRoomNo}}</td>
-      <td>{{type}}</td>
-      <td>{{price}}</td>
+      <td>{{date[ticketID.indexOf(ticket)]}}</td>
+      <td>{{time[ticketID.indexOf(ticket)]}}</td>
+      <td>{{seatNo[ticketID.indexOf(ticket)]}}</td>
+      <td>{{row[ticketID.indexOf(ticket)]}}</td>
+      <td>{{showRoomNo[ticketID.indexOf(ticket)]}}</td>
+      <td>{{type[ticketID.indexOf(ticket)]}}</td>
+      <td>\${{price[ticketID.indexOf(ticket)]}}</td>
+    </tr>
     </tbody>
   </table>
   <div>Total: {{total}}</div>
@@ -41,7 +41,7 @@ import { TicketService } from 'src/app/services/ticket.service';
   <div>CVV: {{cVV}}</div>
   <div>ExpirationDate: {{expirationDate}}</div>
   <button mat-button (click) = "clearCart()" routerLink = "/ticketselect">Clear Cart</button>
-  <button mat-button (click) = "updateTicketEmail()" routerLink = "/">Confirm Purchase</button>
+  <button mat-button (click) = "updateTicketEmail()" routerLink = "/success">Confirm Purchase</button>
   `,
   styleUrls: ['./checkout.component.css']
 })

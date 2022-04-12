@@ -10,13 +10,6 @@ import { Tickets } from 'src/app/models/ticket-model';
   
   <div>
       <mat-form-field appearance="fill">
-        <mat-label>Input Starting Ticket ID</mat-label>
-        <input matInput type="ticket.ticketID" required ticketID="ticketID" #name="ngModel" [(ngModel)]="ticketID">
-      </mat-form-field>
-  </div>
-
-  <div>
-      <mat-form-field appearance="fill">
         <mat-label>Input Row Count</mat-label>
         <input matInput type="ticket.ticketID" required ticketID="ticketID" #name="ngModel" [(ngModel)]="rowCount">
       </mat-form-field>
@@ -116,6 +109,13 @@ export class AddTicketsComponent implements OnInit {
         this.currentShowings = data as Showing[];
         console.log(this.currentShowings);
       });
+    this.getMaxTicket()
+      .subscribe((data: any) => {
+        this.maxTicket = data as Tickets[];
+        this.ticketID = +this.maxTicket[0].ticketID + +1;
+        console.log("startingTicketID:" + this.ticketID)
+      });
+
   }
 
   ticket = new Tickets();
@@ -123,6 +123,8 @@ export class AddTicketsComponent implements OnInit {
   ticketCount : number = 0;
   ticketID : number = 0;
   currentShowings: Showing[] = [];
+  maxTicket: Tickets[] = [];
+
   row: string[] = ["A", "B", "C", "D", "E", "F", "G", 
                   "H", "I", "J", "K", "L", "M", "N", 
                   "O", "P", "Q", "R", "S", "T", "U", 
@@ -135,6 +137,10 @@ export class AddTicketsComponent implements OnInit {
 
   getShowings() {
     return this.showingService.getAllShowings();
+  }
+
+  getMaxTicket() {
+    return this.ticketService.getLastTicket();
   }
 
   createTickets() {

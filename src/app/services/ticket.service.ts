@@ -29,4 +29,8 @@ export class TicketService {
     return this.webReqService.put(pk,ticket);
   }
 
+  getLastTicket() {
+    return this.webReqService.get('Tickets/MaxID')
+  }
+
 }

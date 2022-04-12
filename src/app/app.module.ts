@@ -58,6 +58,7 @@ import { TheaterService } from 'src/app/services/theater.service';
 import { WebRequestService } from './services/web-request.service';
 import { BranchService } from './services/branch.service';
 import { MatExpansionPanel } from '@angular/material/expansion';
+import { SuccessComponent } from './components/success/success.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { MatExpansionPanel } from '@angular/material/expansion';
     DeleteMovieProducerComponent,
     DeleteMovieCastComponent,
     DeleteMovieGenreComponent,
-    DeleteMovieDirectorComponent
+    DeleteMovieDirectorComponent,
+    SuccessComponent
   ],
   imports: [
     MatSelectModule,

@@ -19,7 +19,7 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
 @Component({
   selector: 'app-home',
   //templateUrl: './home.component.html',
-  template : `<h1 style="font-size: xx-large;"> Home</h1>
+  template : `
 
 <mat-tab-group mat-align-tabs="start">
   <mat-tab label="Search By City">
@@ -77,8 +77,8 @@ import { CloseScrollStrategy } from '@angular/cdk/overlay';
 
     <div class="Search Theater">
       <mat-form-field appearance="fill">
-        <mat-label>Search by theater name</mat-label>
-        <mat-select required placeholder="Ex. Landmark" name="branchID" #branchID="ngModel" [(ngModel)]="theaterVal">
+        <mat-label>Select Theater:Branch</mat-label>
+        <mat-select name="branchID" #branchID="ngModel" [(ngModel)]="theaterVal">
           <mat-option *ngFor="let currBranch of currentBranches" [value]="currBranch.branchID"> 
             {{currBranch.theaterName + " : " + currBranch.branchName}} 
           </mat-option>

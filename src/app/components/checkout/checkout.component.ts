@@ -64,9 +64,6 @@ export class CheckoutComponent implements OnInit {
   branchID : Number[] = Cart.branchID;
   total : Number = Cart.total;
 
-  dateString = Cart.date.join().replace(',','\n');
-
-
   tickets = new Tickets();
 
   cardNumber = globals.cardNumber;

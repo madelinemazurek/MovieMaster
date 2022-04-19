@@ -14,6 +14,9 @@ also created to allow for full functionality of the web application.
 
 A full report for this project is included here, titled "MovieMaster Final Report.pdf"
 
+## Heres a look at the Website!
+![movieMaster](https://user-images.githubusercontent.com/81454562/164054157-d9354f6c-e651-4512-8f78-80aea19dc562.gif)
+
 ## System Setup and How to Run
 The front end requires a 32-bit windows version of NodeJS version 16.13.1. To install a node modules folder 
 you will want to run the command "npm install" once navigated to the installed project folder. Then you can enter "npm start".
